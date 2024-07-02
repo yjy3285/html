@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h2 {
+text-shadow : 2px 2px 8px white, -2px -2px 8px violet;
+font-family: 'HS-Regular';
+text-align:center;
+
+}
+div {
+        width : 40%;
+        height : 250px;
+        margin : 20px auto;  
+        padding-top: 30px;
+        padding-bottom:20px;
+        padding-left : 20px;
+        padding-right : 20px;
+        font-family: 'HS-Regular';
+        background-color: violet;
+        
+          
+}
+</style>
+</head>
+<body>
+<h2>펜션 예약 서비스</h2>
+	<hr>
+	<div>
+	<form method="post" action="...">
+		예약자명 : <input type="text" name="a"><br> <br>
+		예약암호 : <input type="password" name="b"><br> <br>
+		룸선택 : 
+		<input type="radio" name="name" value="name1"> 둘리 
+		<input type="radio" name="name" value="name2"> 희동 
+		<input type="radio" name="name" value="name3"> 도우너 
+		<input type="radio" name="name" value="name4"> 또치 <br> 
+		<br>
+		추가요청사항 : 
+		<input type="checkbox" name="activity" value="바베큐">바베큐 
+		<input type="checkbox" name="activity" value="수영장"> 수영장 
+		<input type="checkbox" name="activity" value="낚시"> 낚시 
+		<input type="checkbox" name="activity" value="조식"> 조식 <br> <br>
+		<label>예약날짜: <input type="date" name="a" />
+		</label>
+		<hr>
+		<br>
+
+		<input type="submit" value="보내기"> 
+		<input type="reset" value="다시작성하기">
+	</form></div>
+
+</body>
+</html>
