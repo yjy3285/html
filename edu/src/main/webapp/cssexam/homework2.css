@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+}
+header {
+	width: 100%;
+	height: 100px;
+	background-image: linear-gradient(to right, pink,skyblue,violet);
+	text-align : center;
+	margin : 20px auto;
+	
+}
+
+a{
+  text-decoration : none;
+  margin:20px ;
+  
+  
+        }
+a:hover {
+   font-weight : bold;
+   background-color : magenta;
+    color : white;  
+                                    
+        }
+nav:hover{
+	font-weight : bold;
+}
+h1{
+	color:purple;
+	text-shadow : 2px 2px 8px white, -2px -2px 8px white;
+	padding:10px;
+	
+}
+section> article:nth-of-type(1) {
+	border : 2px dotted pink;
+	border-radius : 20px;
+	margin:20px auto;
+	padding:20px 20px 20px 20px ;
+	
+}
+article:nth-of-type(2) {
+	border : 2px dotted orange;
+	border-radius : 20px;
+	margin:20px auto;
+	padding:20px 20px 20px 20px ;
+	
+}
+article:nth-of-type(3) {
+	border : 2px dotted green;
+	border-radius : 20px;
+	margin:20px auto;
+	padding:20px 20px 20px 20px ;
+	
+}
+article:nth-of-type(1) > h2 {
+	
+	color:pink;
+	font-weight : bold;
+	
+}
+article:nth-of-type(2)> h2 {
+	color:orange;
+	font-weight : bold;
+}
+article:nth-of-type(3)> h2 {
+	color:green;
+	font-weight : bold;
+}
+section {
+	width: 70%;
+	margin-left : auto;
+    margin-right : auto;
+	
+	
+}
+span {
+	color : blue;
+	font-weight : bold;
+	
+}
+table, th, td {
+		border : 2px solid orange;
+		/*border : 1px dotted red;*/
+		border-collapse : collapse; /*겹선을 단선으로 만들어 줌.  */
+	}
+	th {
+		background-color : #ffff80;
+	}
+
+tr:hover {
+	background-color:skyblue;
+	color: red;
+	
+}
+figure > img {
+	text-align : center;
+	margin:20px;
+	margin-left : auto;
+    margin-right : auto;
+}
+
+figure {
+ margin-left : auto;
+ margin-right : auto;
+ text-align:center;
+ }
+figure> figcation {
+ margin: 20px auto;
+ }
+ img:hover{
+ opacity:0.5;
+ transition : 4s;
+ 
+ }
+ aside{
+ text-align:center;
+ 
+ }
+footer{
+	width: 100%;
+	height: 50px;
+	clear: both;
+	background-color: lightgray;
+	line-height:50px;
+    text-align:center;
+}
+body{
+	font-family: 'GangwonEdu_OTFBoldA';
+	
+}

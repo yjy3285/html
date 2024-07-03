@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+div {
+  background-image : linear-gradient(to right, yellow, green);
+  font-size : 2em;
+  font-weight : bold; 
+  text-align : center;
+  line-height : 100px;
+  width : 400px;
+  height : 100px;
+  margin: 20px auto;
+  color : white;
+  border-radius : 20px;
+  font-family: 'ghanachoco';
+  
+ }
+ hr {
+ background-image : linear-gradient(to right, red, orange, yellow, green, blue, navy, purple);
+ height : 5px;
+ }
+ 
+ figure > img {
+   border : 1px solid green;
+   box-shadow : 5px 5px 15px lightgreen ;
+   text-align : center;
+   width : 200px;
+   height : 200px;
+   margin : 20px;
+   border-radius : 20px;
+   
+ 
+ }
+  body {
+ text-align : center;
+ }
+  figure {
+ margin-left : auto;
+ margin-right : auto;
+ }
+  span:nth-of-type(1) {
+            color : violet;
+        }
+  span:nth-of-type(2) {
+            color : orange;
+            text-shadow : 2px 2px 8px white, -2px -2px 8px white;
+        }       
+  img[src$=gif]:hover {
+  transform : rotate(10deg);
+  transition : transform 2s;
+  
+            }  
+  img[src$=png]:hover {
+  transform : rotate(-10deg);
+  transition : transform 2s;
+  
+           }
+  img[src$=jpg]:hover {
+  transform : skewY(20deg);
+  transition : transform 2s;
+  
+            }   
+ 
+                   
+                
+</style>
+</head>
+<body>
+<div><span>과일</span>의 <span>종류</span></div>
+<hr>
+<figure>
+<img src="../images/r1.gif">
+<img src="../images/r2.gif">
+<img src="../images/r3.jpg">
+<img src="../images/r4.gif">
+<img src="../images/r5.png">
+<br>
+<img src="../images/r6.png">
+<img src="../images/r7.png">
+<img src="../images/r8.jpg">
+<img src="../images/r9.jpg">
+<img src="../images/r10.jpg">
+
+
+
+
+</figure>
+
+</body>
+</html>
