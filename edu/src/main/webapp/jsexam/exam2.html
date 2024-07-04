@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>JavaScript의 변수 선언과 활용(1)</h1>
+<script>
+	document.writeln(123);
+	document.writeln(v1+"<br>");	// 오류 발생
+	document.writeln(456); //위에서 오류 발생했기에 이건 출력안하고 해당 스크립트 종료
+	
+</script>
+<hr>
+<script>
+	var v1;  // let, const
+	document.writeln(v1+"<br>"); //선언만 했기에 자동으로 undefined 넣어줌.(undefined는 타입명이면서 값으로도 쓰인다)
+	v1 = 100;
+	document.writeln(v1+"<br>");
+	v1 = '가나다';
+	document.writeln(v1+"<br>");	
+	var v1 = true;
+	document.writeln(v1+"<br>");	
+	v1 = 123;
+	document.writeln(v1+45+"<br>");	 //덧셈 연산
+	v1 = '123';
+	document.writeln(v1+45+"<br>");	//문자열 결합
+	//변수 타입 미리 정해두지 않고 그때 그때 변환., 똑같은 이름의 변수 또 사용해도 상관x
+	//-> 이 후 협업할 때 두 개의 소스안에 같은 이름의 변수 있다면 문제가 생김->이를 let으로 해결 가능
+</script>
+<hr>
+<script>
+	document.writeln(v1+"<br>");	//마지막으로 선언된 v1이 123 이기에 그 값이 출력됨.
+</script>
+</body>
+</html>

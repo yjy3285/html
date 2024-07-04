@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ h1:nth-of-type(1){
+ color : pink;
+ text-shadow : 2px 2px 5px red, -2px -2px 5px red;
+}
+ h1:nth-of-type(2){
+ color : green;
+
+}
+</style>
+</head>
+<body>
+<h1>자바스크립트로 구현하는 구구단</h1>
+<hr>
+<script>
+var num = window.prompt("1부터 9사이의 숫자를 입력하세요.");
+num = parseInt(num, 10);
+while(isNaN(num) || num<1 || num>9) {
+	num = window.prompt("1부터 9사이의 숫자를 입력하세요.");
+		
+}
+
+	document.write("<h1>"+ num + "단입니다."  + "<h1>");
+	document.write("<hr>");
+	for(let j=1; j <10; j++) {
+		document.writeln(num+"x"+j+"="+ (num*j) + "<br>");
+	
+}
+
+</script>
+</body>
+</html>

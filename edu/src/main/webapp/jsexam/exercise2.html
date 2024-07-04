@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+span {
+color : violet;
+}
+</style>
+</head>
+<body>
+<h1><span>자바스크립트 실습(2)</span></h1>
+<hr>
+<script>
+var start = (Math.random()*10)+1;
+var end = (Math.random()*10)+11;
+var start_f = Math.floor(start);
+var end_f = Math.floor(end);
+document.write("<h2>" + start_f + "부터" + end_f + "까지의 합은" + ((start_f+end_f)*(end_f-start_f+1)/2)+ "입니다. "+" </h2>");
+</script>
+</body>
+</html>
