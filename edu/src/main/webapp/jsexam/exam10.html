@@ -20,12 +20,12 @@ document.write('<hr>');
 var result1 = f1();
 var result2 = f2(100,200);
 document.write('result1 : '+result1+' result2 : '+result2);
-if(result1 == undefined) {//if(!result1) {
+if(result1 == undefined) {//if(!result1) { false return!
 	document.write('<br>리턴값이 없군요!!');
 }
 document.write('<hr>');
-f1(100);
-f2(100);
+f1(100); //리턴값 없어서 무시
+f2(100); //하나가 undefined라서  연산 못하니까 ->NaN
 
 </script>
 

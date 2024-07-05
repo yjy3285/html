@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+var y = window.prompt("년도를 입력하세요.")
+var m = window.prompt("달을 입력하세요.")
+var d = window.prompt("일자를 입력하세요.")
+function getKorDay(y, m, d) {
+	var result = 0;
+	if(isNaN(y,m,d)) {
+		return undefined;
+		
+	}
+	getKorDay();
+
+	
+	return y+"년"+ m+"월" + d+"일은"+ getKorDay.getDate()+" 입니다." ;
+	
+	
+	
+}
+
+writeColor(getKorDay(undefined),'h1','red');
+writeColor(getKorDay(),'h1','blue');
+
+
+
+
+
+</script>
+
+</body>
+</html>

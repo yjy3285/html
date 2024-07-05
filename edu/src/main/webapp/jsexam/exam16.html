@@ -12,14 +12,14 @@ var ary1 = ['둘리', '또치', '도우너', '희동이', '고길동'];
 document.write(ary1.length + "<br>");
 document.write(ary1 + "<br>");
 
-var ary2 = ary1.sort();
+var ary2 = ary1.sort(); //sort한 결과도  ary1에 담아주게 됨.
 document.write(ary1 + "<br>");
 document.write(ary2 + "<br>");
 document.write("<hr>");
 
 var ary3 = [30, 11, 5, 27, 9];
 document.write(ary3 + "<br>");
-document.write(ary3.sort() + "<br>");
+document.write(ary3.sort() + "<br>"); //문자기반 sort 함.
 document.write(ary3.sort(function(a, b){ return a - b;}) + "<br>");
 document.write(ary3.sort(function(a, b){ return b - a;}) + "<br>");
 document.write("<hr>");

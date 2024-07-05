@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function calc(...p) {
+	var result = 0;
+	for (var i = 0 ;i <p.length; i++) {
+		var tmp = p[i];
+		if (isNaN(tmp)) {
+			return "숫자만 전달하세요";		
+			}
+		
+		result +=tmp;
+		
+	}
+	return result;
+	
+		
+		
+}
+
+try {
+	document.writeln(calc()+"<br>");
+	document.writeln(calc(10,20,parseInt('30', 10)) +"<br>");
+	document.writeln(calc(10, '가나다',20)+"<br>");
+	document.writeln(calc(1,2,3,4,5)+"<br>");
+}catch(e) {
+	window.alert(e.message);
+}
+
+
+
+</script>
+</body>
+</html>
