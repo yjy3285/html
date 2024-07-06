@@ -4,88 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Insert title here
+<title>Insert title here</title>
+</head>
+<body>
+<h1 style = "color: violet;">자바스크립트 실습(5)
+</h1>
 
-</title>
 <script src="util.js"></script>
 <script>
-function sum(total) {
+function sum(num) {
 	
-	if(total === undefined) {
+	if(arguments.length==0) {
 		return;
-		
-		let a = 0;
-		for(let i=1;i<=total;i++){
-			a+=i;
-		}
-			return a;
 	}
-}
-	function handleSum() {
-	for (let i = 0 ;i<5;i++) {
-		let random = Math.floor(Math.random()*6);
-		let result = (random===0)? sum() : sum(random);
 		
-		if(result!==undefined) {
-			write(`호출 결과값: ${result}`,'h2');
+		let total = 0;
+		for(let i=1;i<=num;i++){
+			total+=i;
+		}
+			return total;
+	}
+	for(let j = 0; j<5; j++) {
+		let randomNumber = Math.floor(Math.random()*6);
+		document.write("<h3>추출된 난수 : "+randomNumber+"</h3>");
+		if(randomNumber ==0) {
+			let result = sum();
+			if(result !=undefined) {
+				writeColor("호출 결과값 : " + result,"h2","green");
+			}else{
+				write("<h3>결과값이 없어요!!</h3");
+			}
 		}else {
-			write("결과값이 없어요!!",h3);
+			let result = sum(randomNumber);
+			if(result!=undefined) {
+				writeColor("호출 결과값 : "+result,"h2","green");
+				
+			}else {
+				write("<h3>결과값이 없어요!!</h3");
+			}
 		}
-	}
-	}
-	function init(){
-	writeColor("자바스크립트 실습(5)","h1","blue");
-	handleSum();
-}
-
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-  
-  /* var a= Math.floor(Math.random()*6) + 0 ;
-  if (result = null) {
-	  return null;
-	  document.writeln("리턴값이 없어요!");
-  }
-  
-  
-  else if(sum=undefined) {
-	  
-  }
-  for(var i=1; i<a.length; i++){
-    result+=a[i];
-    return result;
-    }
-}
-document.writeln("호출 결과 값: ")
-writeColor(sum(a), 'h2', 'black');
-   */
-
+		hr();
+		}
 </script>
-</head>
-
-<body>
 </body>
 </html>

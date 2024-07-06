@@ -7,32 +7,36 @@
 <body>
 <script src="util.js"></script>
 <script>
-var y = window.prompt("년도를 입력하세요.")
-var m = window.prompt("달을 입력하세요.")
-var d = window.prompt("일자를 입력하세요.")
 function getKorDay(y, m, d) {
-	var result = 0;
-	if(isNaN(y,m,d)) {
+	if(typeof y!='number' ||typeof m!='number' || typeof d!='number') {
 		return undefined;
-		
 	}
-	getKorDay();
-
 	
-	return y+"년"+ m+"월" + d+"일은"+ getKorDay.getDate()+" 입니다." ;
+	let date = new Date(y,m-1,d);
+	let day = date.getDay();
 	
-	
-	
+	let days = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+	return days[day];
 }
 
-writeColor(getKorDay(undefined),'h1','red');
-writeColor(getKorDay(),'h1','blue');
-
-
-
-
+function checkDay() {
+	let year = prompt("년도를 입력하세요");
+	let month = prompt("월을 입력하세요");
+	let day = prompt("일을 입력하세요");
+	
+	year = parseInt(year);
+	month = parseInt(month);
+	day = parseInt(day);
+	
+	let result = getKorDay(year, month, day);
+	if(result == undefined) {
+		writeColor("결과없음", "h1", "red");
+	}else {
+		writeColor(`${year}년 ${month}월 ${day}일은 ${result}입니다`, "h1", "blue");
+		}
+	}
 
 </script>
-
+<button onclick = "checkDay()">요일 확인하기</button>
 </body>
 </html>

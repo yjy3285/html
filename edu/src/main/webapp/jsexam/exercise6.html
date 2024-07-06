@@ -5,33 +5,62 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1 style= "color: blue;">자바스크립트 실습(6)</h1>
 <script src="util.js"></script>
-<h1>자바스크립트 실습(6)</h1>
 <script>
-var ary = [10, 5, 7, 21, 4, 8, 18];
-
-ary.forEach(function getMaxValue() {
-	
-});
-ary.forEach(function getMinValue() {
-	
-});
-ary.forEach(function getSum() {
+function getMaxValue(arr) {
+	let max = arr[0];
+	arr.forEach(function(num) {
+		if(num>max) {
+			max = num;
+		}
+	});
+	return max;
+}
+function getMinValue(arr) {
+	let min = arr[0];
+	arr.forEach(function(num){
+		if(num<min){
+			min = num;
+		}
+	});
+	return min;
+}
+function getSum(arr) {
 	let sum = 0;
-	sum+=getSum();
-	
-});
-ary.forEach(function getCountOddNum() {
-	
-});
-ary,forEach(function getCountEvenNum() {
-	
-});
-writeColor(getSum(), 'h2', 'black');
-
-
+	arr.forEach(function(num) {
+		sum += num;
+	});
+	return sum;
+}
+function getCountOddNum(arr) {
+	let count = 0;
+	arr.forEach(function(num) {
+		if(num%2 !=0) {
+			count ++;
+		}
+	});
+	return count;
+}
+function getCountEvenNum(arr) {
+	let count = 0;
+	arr.forEach(function(num) {
+		if(num%2==0) {
+			count++;
+			
+		}
+	});
+	return count;
+}
+let numbers = [10, 5, 7, 21, 4, 8, 18];
+let sumResult = getSum(numbers);
+writeColor("모든 원소의 합 : "+sumResult, "h2", "red");
+write("<ul>");
+write("<li>최대값 : "+getMaxValue(numbers)+"</li>");
+write("<li>최소값 : "+getMinValue(numbers)+"</li>");
+write("<li>짝수의 갯수 : "+getCountEvenNum(numbers)+"</li>");
+write("<li>홀수의 갯수 : "+getCountOddNum(numbers)+"</li>");
 
 </script>
-
 </body>
 </html>

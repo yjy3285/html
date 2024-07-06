@@ -6,15 +6,18 @@
 </head>
 <body>
 <script>
-function calc(...p) {
-	var result = 0;
-	for (var i = 0 ;i <p.length; i++) {
-		var tmp = p[i];
-		if (isNaN(tmp)) {
+function calc() {
+	
+	if (arguments.length==0) {
+		return 0;
+	}
+	let result = 0;
+	for (let i = 0 ;i <arguments.length; i++) {
+		if(isNaN(parseInt(arguments[i]))) {
 			return "숫자만 전달하세요";		
 			}
 		
-		result +=tmp;
+		result +=parseInt(arguments[i]);
 		
 	}
 	return result;
@@ -22,17 +25,10 @@ function calc(...p) {
 		
 		
 }
-
-try {
-	document.writeln(calc()+"<br>");
-	document.writeln(calc(10,20,parseInt('30', 10)) +"<br>");
-	document.writeln(calc(10, '가나다',20)+"<br>");
-	document.writeln(calc(1,2,3,4,5)+"<br>");
-}catch(e) {
-	window.alert(e.message);
-}
-
-
+document.write("<h3>"+calc()+"</h3>");
+document.write("<h3>"+calc(10, 20, '30')+"</h3>");
+document.write("<h3>"+calc(10, '가나다', 20)+"</h3>");
+document.write("<h3>"+calc(1, 2, 3, 4, 5)+"</h3>");
 
 </script>
 </body>
