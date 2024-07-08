@@ -15,7 +15,7 @@ function getMaxValue(arr) {
 			max = num;
 		}
 	});
-	return max;
+	return max; //return Math.max(...arr)
 }
 function getMinValue(arr) {
 	let min = arr[0];
@@ -50,7 +50,7 @@ function getCountEvenNum(arr) {
 			
 		}
 	});
-	return count;
+	return count; //return arr.length - getCountOddNum(arr)
 }
 let numbers = [10, 5, 7, 21, 4, 8, 18];
 let sumResult = getSum(numbers);

@@ -10,15 +10,15 @@
 function action(type) {
 	if (type == "add")
     	return function (a, b) {
-        	write(a+b, "h2");
+        	write(a+b, "h2"); //30
     	};
     else if (type == "sub")
     	return function (a, b) {
-        	write(a-b, "h2");
+        	write(a-b, "h2"); //-10
     	};
     else
     	return function (a, b) {
-        	write(a*b, "h2");
+        	write(a*b, "h2"); //200
     	};
 }
 action("add")(10,20);

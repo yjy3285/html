@@ -10,7 +10,7 @@ function highOrderFunction(p) {
 	if (typeof p == 'function') {
 		p('ㅋㅋㅋ');		
 	} else {
-		alert(p);
+		alert(p); //window.alert()
 	}
 }
 highOrderFunction(function (msg) {document.write(msg);});

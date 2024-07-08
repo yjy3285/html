@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function printH1(content) {
+	document.write("<h1>"+content+"</h1>");
+}
+function printH4(content) {
+	document.write("<h4>"+content+"</h4>");
+}
+
+function apply(arr,func) {
+	if(!Array.isArray(arr) || typeof func !="function") {
+		console.log("아규먼트 오류");
+		return false;
+	}
+	arr.forEach(element => {
+		func(element);
+	});
+	return true;
+}
+
+let data = [];
+let input;
+do {
+	input = window.prompt("데이터를 입력하세요(취소버튼을 누를 시 종료됩니다.) : ");
+			
+	if(input !=null) {
+		data.push(input);
+	}
+}
+while(input !=null);
+
+let randomNum = Math.floor(Math.random()*10) + 1;
+console.log("추출된 난수: ", randomNum);
+
+if (randomNum == 1 || randomNum ==4 || randomNum ==6) {
+	let result = apply(data,printH1);
+	if(result) {
+		window.alert("처리 성공");		
+	}
+	else{
+		window.alert("처리 실패")
+	}
+}
+else if (randomNum ==3 || randomNum == 5 || randomNum == 7) {
+	let result = apply(data, printH4);
+	if (result) {
+		window.alert("처리 성공");
+	}
+	else {
+		window.alert("처리 실패");
+	}
+}
+else if (randomNum == 8 || randomNum == 9) {
+	let result = apply("ㅋㅋ", printH1);
+	if(result) {
+		window.alert("처리 성공");
+	}
+	else {
+		window.alert("처리 실패");
+	}	
+}
+else {
+	let result = apply(data);
+	if(result) {
+		window.alert("처리 성공");
+	}
+	else {
+		window.alert("처리 실패");
+	}	
+	
+}
+</script>
+</body>
+</html>

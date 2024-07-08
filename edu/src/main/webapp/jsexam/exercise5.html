@@ -14,7 +14,7 @@
 <script>
 function sum(num) {
 	
-	if(arguments.length==0) {
+	if(arguments.length==0) { //if(!num) 이렇게 줘도 됌.
 		return;
 	}
 		
@@ -43,6 +43,9 @@ function sum(num) {
 				write("<h3>결과값이 없어요!!</h3");
 			}
 		}
+		//let result = randomNumber ==0? sum() : sum(randomNumber);
+		//result == undefined && write("결과값이 없어요 !!", "h3");
+		//result == undefined || write(`호출 결과값 : ${result}`,"h2"); 위 코드를 이렇게 구현도 가능!
 		hr();
 		}
 </script>
