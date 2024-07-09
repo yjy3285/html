@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let randomNum = Math.floor(Math.random()*3)+1;
+if (randomNum == 1) {
+	if(window.confirm("확인을 클릭하시면 다음창으로 넘어갑니다.")) {
+	location.href = "https://daum.net/"
+	}else {
+		location.href = "/edu/first.html";
+	}
+}
+else if (randomNum == 2) {
+	if(window.confirm("확인을 클릭하시면 다음창으로 넘어갑니다.")){
+	location.href = "https://naver.com/"
+	}else{
+		location.href = "/edu/first.html";
+}
+}
+else {
+
+	if(window.confirm("확인을 클릭하시면 다음창으로 넘어갑니다.")){
+	location.href = "https://google.co.kr/"
+	}else{
+		location.href = "/edu/first.html";
+	}
+}
+
+
+
+</script>
+
+</body>
+</html>

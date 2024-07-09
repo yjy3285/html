@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>이벤트 모델 - 인라인</h1>
+ <hr>
+ <button onclick="update(1);">빨강색</button>
+ <button onclick="update(2);">파랑색</button>
+ <button onclick="update(3);">노랑색</button><br>
+ <hr>
+ <div></div>
+ <h3></h3>
+ <script>
+ const date = new Date();
+ const month = date.getMonth() + 1;
+ const day = date.getDate();
+ 
+ const dom = document.getElementsByTagName("div")[0];
+ dom.innerHTML = `<h3>오늘은 ${month}월 ${day}일입니다</h3>`;
+	function update(num) {
+		if (num == 1)
+ 		dom.innerHTML = `<h3><font color=red>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+		else if (num == 2)
+ 		dom.innerHTML = `<h3><font color=blue>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+		else
+ 		dom.innerHTML = `<h3><font color=yellow>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+ 		
+	}
+</script>
+	
+</body>
+</html>

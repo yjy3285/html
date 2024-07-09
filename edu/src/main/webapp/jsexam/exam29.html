@@ -13,6 +13,7 @@ Array.prototype.numSort = function(type) {
 			return false;
 	if (type == "ASC")
 		this.sort(function(a, b) { return a - b; });
+	//this.sort((a,b) =>a-b); 이렇게도 가능.
 	else if (type == "DESC")
 		this.sort(function(a, b) { return b - a; });
 	else

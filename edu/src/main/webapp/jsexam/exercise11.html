@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function DayInfo(name,year,month,day) {
+	this.name = name;
+	this.year = year;
+	this.month = month;
+	this.day = day;
+
+}
+	DayInfo.prototype.getTotalDates = function() {
+		var today = new Date();
+		var birth = new Date(this.year, this.month-1,this.day);
+		var diff = today-birth;
+		var diffdays = Math.floor(diff/((1000 * 60 * 60 * 24) + 1));
+		
+		return `${this.name}님은 태어난지 ${diffdays}일 되었어요.`;
+	};
+	DayInfo.prototype.getKorDay = function() {
+		var daysofweek = ['일', '월', '화', '수', '목', '금', '토'];
+		var birth = new Date(this.year, this.month-1,this.day);
+		var dayofweek = birth.getDay();
+		return `${this.name}님은 ${daysofweek[dayofweek]}요일에 태어났어요.`;
+	};
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var person1 = new DayInfo('황예린', 1995, 5, 9);
+		var person2 = new DayInfo('정준범', 1998, 9, 23);
+		var person3 = new DayInfo('엄성현', 1993, 5, 10);
+		
+		var outputdiv = document.getElementById('output');
+		
+		outputdiv.innerHTML +=`<h3 style = "color:blue;">${person1.getTotalDates()}</h3>`;
+		outputdiv.innerHTML +=`<h3 style = "color:green;">${person1.getKorDay()}</h3><br>`;
+		
+		outputdiv.innerHTML +=`<h3 style = "color:blue;">${person2.getTotalDates()}</h3>`;
+		outputdiv.innerHTML +=`<h3 style = "color:green;">${person2.getKorDay()}</h3><br>`;
+		
+		outputdiv.innerHTML +=`<h3 style = "color:blue;">${person3.getTotalDates()}</h3>`;
+		outputdiv.innerHTML +=`<h3 style = "color:green;">${person3.getKorDay()}</h3><br>`;
+		
+	});
+
+</script>
+</body>
+<div id="output"></div>
+</html>
