@@ -12,18 +12,18 @@
 <button id="b2">표준이벤트모델</button>
 <script>
 	function test1() {
-		alert("인라인이벤트모델 버튼 클릭");
+		alert("인라인이벤트모델 버튼 클릭"); //인라인은 이벤트 수행 멈출 표준적인 방법은 없음.
 	}
 	function test2() {
 		alert("고전이벤트모델 버튼 클릭");
-		btn1.onmouseover = null;
+		btn1.onmouseover = null; //더이상 핸들러 수행되지 않음.
 	}
 	function test3() {
 		alert("표준이벤트모델 버튼 클릭");
 		btn2.removeEventListener("mouseover", test3);
 	}
-	var btn1 = document.querySelector("#b1");
-	var btn2 = document.getElementById("b2");
+	var btn1 = document.querySelector("#b1"); //id 선택자 주니까 # 필수
+	var btn2 = document.getElementById("b2"); //id 값만 줘야 함.
 	btn1.onmouseover = test2;  // 고전
 	btn2.addEventListener("mouseover", test3);
 </script>

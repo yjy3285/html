@@ -44,6 +44,7 @@
 	}
 	function displayAlert(e) {
 		window.alert(`${e.target.nodeName} 태그 에서 ${e.type} 이벤트 발생!! --- ${e.currentTarget.nodeName} 태그가 이벤트 처리 위임받음`);
+		e.stopPropagation();
 	}
 	window.addEventListener("load", clickHandler);
 </script>

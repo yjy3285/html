@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>이벤트 모델 - 고전</h1>
+ <hr>
+ <button>빨강색</button>
+ <button>파랑색</button>
+ <button>노랑색</button>
+ <hr>
+ <h3></h3>
+ <script>
+ var doms = document.querySelectorAll("button");
+ var dom1 = doms[0];
+ var dom2 = doms[1];
+ var dom3 = doms[2];
+ const date = new Date();
+ const month = date.getMonth() + 1;
+ const day = date.getDate();
+ 
+ const dom = document.getElementsByTagName("h3")[0];
+ dom.innerHTML = `<h3>오늘은 ${month}월 ${day}일입니다</h3>`;
+ 
+dom1.onclick = function() {
+	dom.innerHTML = `<h3><font color=red>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+};
+dom2.onclick = function() {
+	dom.innerHTML = `<h3><font color=blue>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+	
+}
+dom3.onclick = function() {
+	dom.innerHTML = `<h3><font color=yellow>오늘은 ${month}월 ${day}일입니다</font></h3>`;
+}	
+ 		
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>구구단</h1>
+<button>1단</button>
+<button>2단</button>
+<button>3단</button>
+<button>4단</button>
+<button>5단</button>
+<button>6단</button>
+<button>7단</button>
+<button>8단</button>
+<button>9단</button>
+<script>
+var doms = document.querySelectorAll("button");
+var dom1 = doms[0];
+var dom2 = doms[1];
+var dom3 = doms[2];
+var dom4 = doms[3];
+var dom5 = doms[4];
+var dom6 = doms[5];
+var dom7 = doms[6];
+var dom8 = doms[7];
+var dom9 = doms[8];
+
+
+//dom1.addEventListener("click", function() {for(let j=1; j <10; j++) {dom.innerHTML = `1x`});
+dom2.addEventListener("click", function() {dom.innerHTML = ``});
+dom3.addEventListener("click", function() {dom.innerHTML = ``}); 
+for(let j=1; j <10; j++) {
+	document.writeln(num+"x"+j+"="+ (num*j) + "<br>");
+
+}
+
+</script>
+</body>
+</html>
