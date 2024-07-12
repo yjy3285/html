@@ -16,15 +16,13 @@
 	document.querySelector("form").addEventListener("submit", function() {
 		const name =  document.querySelector("[type='text']").value;
 		const age =  document.querySelector("[type='number']").value;
-		const content = `입력한 내용입니다. 이름 : ${name}, 나이 : ${age} 전송할까요?`;
+		const content = `입력한 내용입니다. 이름 : ${name}, 나이 : ${age} \n전송할까요?`;
 		
 		
 	   if (!confirm(content)) {
 		   event.preventDefault();
-	   }else{
-		   
 	   }
-	     	
+		   
 	});
 	
 </script>

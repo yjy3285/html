@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1 {
+		text-align: center;
+	}
+	
+	figure {
+		text-align: center;
+	}
+	
+	img.hover {
+		opacity: 0.3;
+	}
+	
+	img {
+		border : 1px solid black;
+		margin : 10px;	
+		box-shadow : 10px 10px 10px rgba(0, 0, 0, 0.8);
+	}
+
+	#dropbox{
+	  width: 900px;
+	  height: 400px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  border: 3px dotted red;
+	}
+</style>
+<script>
+var drop;
+
+function initiate(){
+	var images = document.querySelectorAll('img');
+	
+	for (var i = 0; i <images.length; i++){
+		images[i].addEventListener('dragstart', dragged, false);
+	}	
+	
+	drop = document.getElementById('dropbox');
+	drop.addEventListener('dragover', function(e){ e.preventDefault();}, false);
+	drop.addEventListener('drop', dropped, false);
+	
+	var storedCart = window.localStorage.getItem("cart");
+	if (storedCart) {
+		cntArr = JSON.parse(storedCart);
+		updateDropbox();
+	}
+}
+
+function dragged(e){
+	elem = e.target;
+	e.dataTransfer.setData('Text', elem.getAttribute('id'));
+}
+var cntArr = [0,0,0,0,0,0,0,0,0,0];
+function dropped(e){
+	e.preventDefault();
+	var id = e.dataTransfer.getData('Text');
+	cntArr[id-1]++;
+	updateDropbox();
+	window.localStorage.setItem("cart", JSON.stringify(cntArr)); 
+}
+window.addEventListener('load', initiate, false);
+
+function updateDropbox() {
+	drop.innerHTML = '';
+	for (var i = 0; i < cntArr.length; i++) {
+		if (cntArr[i] > 0) {
+			drop.innerHTML += '<li>' + (i + 1) + '번 상품 ' + cntArr[i] + '개</li>';
+		}
+	}
+}
+
+
+</script>
+</head>
+<body>
+	<h1>원하는 상품을 클릭하세요</h1>
+	<hr>
+	<figure id = "imagebox">
+		<img id = "1" src = "/edu/images/1.jpg" width=150>
+		<img id = "2" src = "/edu/images/2.jpg" width=150>
+		<img id = "3" src = "/edu/images/3.jpg" width=150>
+		<img id = "4" src = "/edu/images/4.jpg" width=150>
+		<img id = "5" src = "/edu/images/5.jpg" width=150>
+
+		<img id = "6" src = "/edu/images/6.jpg" width=150>
+		<img id = "7" src = "/edu/images/7.jpg" width=150>
+		<img id = "8" src = "/edu/images/8.jpg" width=150>
+		<img id = "9" src = "/edu/images/9.jpg" width=150>
+		<img id = "10" src = "/edu/images/10.jpg" width=150>
+	</figure>
+	<hr>
+	<section id = "dropbox"></section>
+</body>
+</html>
