@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shopping Cart</title>
+<style>
+figure>img {
+    border: 2px solid black;
+    box-shadow: 2px 2px 8px white, -2px -2px 8px black;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+body {
+    text-align: center;
+}
+
+figure {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cart {
+    border: 2px solid red;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+</style>
+</head>
+<body>
+<h2>원하는 상품을 클릭하세요~~</h2>
+<hr>
+<figure>
+    <img src="../images/1.jpg" width="100" height="100" draggable="true">
+    <img src="../images/2.jpg" width="100" height="100" draggable="true">
+    <img src="../images/3.jpg" width="100" height="100" draggable="true">
+    <img src="../images/4.jpg" width="100" height="100" draggable="true">
+    <img src="../images/5.jpg" width="100" height="100" draggable="true">
+    <br>
+    <img src="../images/6.jpg" width="100" height="100" draggable="true">
+    <img src="../images/7.jpg" width="100" height="100" draggable="true">
+    <img src="../images/8.jpg" width="100" height="100" draggable="true">
+    <img src="../images/9.jpg" width="100" height="100" draggable="true">
+    <img src="../images/10.jpg" width="100" height="100" draggable="true">
+</figure>
+<div id="cart">
+    <h3>Shopping Cart</h3>
+    <ul id="cart-items">
+        <!-- List of items will be appended here -->
+    </ul>
+</div>
+
+<script>
+if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+}
+
+// Load cart items from localStorage and display them
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart'));
+    const cartList = document.getElementById('cart-items');
+    
+    cartItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartList.appendChild(li);
+    });
+});
+
+// Handle drag start
+document.querySelectorAll('figure img').forEach(img => {
+    img.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', e.target.src);
+    });
+});
+
+// Handle drag over
+document.getElementById('cart').addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+// Handle drop
+document.getElementById('cart').addEventListener('drop', (e) => {
+    e.preventDefault();
+    const src = e.dataTransfer.getData('text/plain');
+    const item = src.split('/').pop(); // Get the image file name
+
+    // Add the item to the cart list
+    const li = document.createElement('li');
+    li.textContent = item;
+    document.getElementById('cart-items').appendChild(li);
+
+    // Update localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cart'));
+    cartItems.push(item);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+});
+</script>
+</body>
+</html>
