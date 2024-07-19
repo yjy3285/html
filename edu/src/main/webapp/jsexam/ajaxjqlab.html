@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+$(document),ready(function(){
+	$( "#clickme").click(function(e) {
+		$( "#output" ).animate({
+			width: [ "toggle", "swing" ],
+			height : [ "toggle", "swing"]
+		}, 3000);
+		 //}5000);
+	
+});
+</script>
+
+<h1>오늘의 날씨 정보</h1>
+<hr>
+
+<script>
+
+	window.onload = function (e) {
+		let xhr = new XMLHttpRequest();
+		xhr.onload = function() {
+			let jsonobj = JSON.parse(xhr.responseText);
+			let time = jsonobj.time;
+			let temp = jsonobj.temp;
+			let imgsrc = "/edu/"+jsonobj.img;
+			
+			
+			if (xhr.status == 200) {
+ 				const target = document.gsetElementById('output');
+ 				target.innerHTML = `기준 시간 : ${time}<br>`;
+ 				target.innerHTML +=`기온 : ${temp}<br>`;
+ 				target.innerHTML += "url("+imgsrc+")";
+ 				
+		};
+		xhr.open("GET", "content/weather.jsp", true);
+		xhr.send();    
+	};
+	}
+</script>
+
+<div id="output" style="width:350px; margin : 10px auto"></div>
+<div id="clickme"><h1>오늘의 날씨 정보</h1></div>
+
+</body>
+</html>

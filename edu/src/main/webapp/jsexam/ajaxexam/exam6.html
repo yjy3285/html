@@ -14,7 +14,7 @@ function getImage() {
 	xhr.responseType = 'blob';
 	xhr.onload = function(e) {
   		if (this.status == 200) {
-    		const blob = e.target.response
+    		const blob = e.target.response //xhr.response
     		const img = document.createElement('img');
     		img.width=100;
     		img.height=100;
